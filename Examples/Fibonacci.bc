@@ -13,3 +13,8 @@
 	c(:)		/* Print the calculated Fibonacci number */
 	a(X) b(X) c(X)	/* Move the three pointers forward by one sheet */
 ]
+
+/*
+Note: This algorithm falls apart at F47,
+probably due to an out of range error in the C++ side of the interpreter.
+*/
