@@ -1,0 +1,29 @@
+/*Prints "Hello, World!\n" to the console*/
+~ch~		/*Declares the pointer ch*/
+ch(XXXXXXX)	/*Moves ch to the eighth sheet, which stores one byte per cell*/
+
+
+/*Explanation of algorithm:
+
+(num)(ch(+))
+	Sets the value of ch's target cell to num
+ch(.)
+	Print the ASCII character corresponding to the value of ch's target cell
+(ch)[ch(-)]
+	Sets the value of ch's target cell to zero
+*/
+
+(072)(ch(+))ch(.)(ch)[ch(-)]	/*  H  */
+(101)(ch(+))ch(.)(ch)[ch(-)]	/*  e  */
+(108)(ch(+))ch(.)(ch)[ch(-)]	/*  l  */
+(108)(ch(+))ch(.)(ch)[ch(-)]	/*  l  */
+(111)(ch(+))ch(.)(ch)[ch(-)]	/*  o  */
+(044)(ch(+))ch(.)(ch)[ch(-)]	/*  ,  */
+(032)(ch(+))ch(.)(ch)[ch(-)]	/*     */
+(087)(ch(+))ch(.)(ch)[ch(-)]	/*  W  */
+(111)(ch(+))ch(.)(ch)[ch(-)]	/*  o  */
+(114)(ch(+))ch(.)(ch)[ch(-)]	/*  r  */
+(108)(ch(+))ch(.)(ch)[ch(-)]	/*  l  */
+(100)(ch(+))ch(.)(ch)[ch(-)]	/*  d  */
+(033)(ch(+))ch(.)(ch)[ch(-)]	/*  !  */
+(010)(ch(+))ch(.)(ch)[ch(-)]	/* \n  */
