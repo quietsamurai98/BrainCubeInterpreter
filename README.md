@@ -19,6 +19,13 @@ The path may be absolute or relative to the location of main.cpp, and must point
 Both the parser and the interpreter have very little in the way of error logging.  
 If the program encounters an issue, it may show an error message and exit, but it could also silently halt or just straight up crash.
 
+### Example Usage
+Runs the included HelloWorld example:  
+```
+Enable parser logging? [Y/n] n
+Enter path to BrainCube source file: ./Examples/HelloWorld.bc
+```
+
 ## To Do
  * Add Mac/UNIX support by finding a portable alternative to `getch()`
  * Improve parser error handling
