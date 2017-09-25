@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="BrainCubeInterpreter" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/BrainCubeInterpreter" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="include" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/BrainCubeInterpreter" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="include/Cell.h" />
+		<Unit filename="include/CellPointer.h" />
+		<Unit filename="include/Ctrl.h" />
+		<Unit filename="include/Ctrl_If.h" />
+		<Unit filename="include/Ctrl_Main.h" />
+		<Unit filename="include/Ctrl_Repeat.h" />
+		<Unit filename="include/Ctrl_While.h" />
+		<Unit filename="include/Expression.h" />
+		<Unit filename="include/Stmt_Declare.h" />
+		<Unit filename="include/Stmt_PtrCmd.h" />
+		<Unit filename="include/Stmt_SysCmd.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="src/Cell.cpp" />
+		<Unit filename="src/CellPointer.cpp" />
+		<Unit filename="src/Ctrl.cpp" />
+		<Unit filename="src/Ctrl_If.cpp" />
+		<Unit filename="src/Ctrl_Main.cpp" />
+		<Unit filename="src/Ctrl_Repeat.cpp" />
+		<Unit filename="src/Ctrl_While.cpp" />
+		<Unit filename="src/Expression.cpp" />
+		<Unit filename="src/Stmt_Declare.cpp" />
+		<Unit filename="src/Stmt_PtrCmd.cpp" />
+		<Unit filename="src/Stmt_SysCmd.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
