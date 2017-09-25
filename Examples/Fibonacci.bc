@@ -1,0 +1,15 @@
+/* Calculates the Fibonacci sequence, printing it to the console*/
+
+
+~true~ true(>+)	/* true is a pointer to [0][0][1] which has a value of 1, so it will always evaluate to true in a control flow head */
+
+~a~ a(+:)	/* First Fibonacci number is 1, and is stored at [0][0][0] */
+~b~ b(X+:)	/*Second Fibonacci number is 1, and is stored at [1][0][0] */
+~c~ c(XX)	/* Third Fibonacci number is ?, and is stored at [2][0][0] */
+
+(true)[ /* Infinite loop to calculate infinite Fibonacci numbers */
+	(a)(c(+))	/* Add a to c */
+	(b)(c(+))	/* Add b to c */
+	c(:)		/* Print the calculated Fibonacci number */
+	a(X) b(X) c(X)	/* Move the three pointers forward by one sheet */
+]
