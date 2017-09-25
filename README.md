@@ -1,5 +1,6 @@
 # BrainCubeInterpreter
-An interpreter for the [BrainCube](https://github.com/quietsamurai98/BrainCube) programming language.
+An interpreter for the [BrainCube](https://github.com/quietsamurai98/BrainCube) programming language.  
+[Read the specification document for BrainCube here! (Don't worry, it's not long.)](https://github.com/quietsamurai98/BrainCube)
 
 ## Building
 So far, I have only tried building the project on a 64 bit Windows 10 computer, using MinGW and the Code::Blocks build tool.
