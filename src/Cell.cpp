@@ -24,9 +24,11 @@ Cell::~Cell(){
 }
 
 unsigned long long Cell::to_u64(){
-    unsigned long long sum = 0;
+    unsigned long long sum = 0LL;
     for(unsigned char i=0; i<64 && i<(this->bit_list.size()); ++i){ //Loop over the bits
-        sum |= (this->bit_list[i]) << i;       //add bit_list[i]*2^i to sum
+        if(bit_list[i]){
+            sum |= 1LL << (unsigned long long)i;       //add bit_list[i]*2^i to sum
+        }
     }
     return sum;
 }
@@ -62,11 +64,7 @@ std::string Cell::to_binary()
 
 std::string Cell::to_decimal()
 {
-    unsigned long long sum = 0;
-    for(unsigned char i=0; i<64 && i<(this->bit_list.size()); ++i){ //Loop over the bits
-        sum |= (this->bit_list[i]) << i;       //add bit_list[i]*2^i to sum
-    }
-    return std::to_string(sum);
+    return std::to_string(to_u64());
 }
 
 void Cell::from_char(char ch)
