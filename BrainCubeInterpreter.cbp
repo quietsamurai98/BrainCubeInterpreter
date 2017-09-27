@@ -45,6 +45,7 @@
 		<Unit filename="include/Stmt_Declare.h" />
 		<Unit filename="include/Stmt_PtrCmd.h" />
 		<Unit filename="include/Stmt_SysCmd.h" />
+		<Unit filename="include/getch.hpp" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Cell.cpp" />
 		<Unit filename="src/CellPointer.cpp" />
