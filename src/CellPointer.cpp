@@ -1,10 +1,7 @@
 #include "CellPointer.h"
 #include "Cell.h"
 
-#include <conio.h>
-/** conio.h provides getch(), letting you get a char from CLI without a newline.
-    This is not a standard library, and it will normally work on a Windows box.
-    THIS IS A TERRIBLE WORKAROUND THAT ISN'T PORTABLE. FIX THIS ASAP.*/
+#include <getch.hpp> //Multi-platform getch()
 
 #include <string>
 #include <iostream>
