@@ -1,5 +1,24 @@
 /* Prints the powers of two (1, 2, 4, 8, etc.) */
 
-~ptr~
-ptr(-:)
-(ptr)[ptr(X-:)]
+~pow~
+~newline~
+~i~
+newline(>>XXXXXXX++++++++++)
+newline(>)(45)(newline(+)) /*-*/
+newline(>)(49)(newline(+)) /*1*/
+newline(>)(32)(newline(+)) /* */
+newline(>)(43)(newline(+)) /*+*/
+newline(>)(32)(newline(+)) /* */
+newline(>)(50)(newline(+)) /*2*/
+newline(>)(94)(newline(+)) /*^*/
+newline(<<<<<<<)
+i(>+:)
+pow(-:)
+newline(.)
+(pow)[
+	(i)(i(-X+O))
+	i(X+:)
+	pow(+X-:)
+	newline(.>.>.>.>.>.>.>.<<<<<<<)
+	?
+]
