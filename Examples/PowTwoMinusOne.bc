@@ -1,0 +1,5 @@
+/* Prints the powers of two (1, 2, 4, 8, etc.) */
+
+~ptr~
+ptr(-:)
+(ptr)[ptr(X-:)]

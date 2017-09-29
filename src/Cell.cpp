@@ -1,6 +1,7 @@
 #include "Cell.h"
 #include <vector>
 #include <string>
+#include "BigPrinter.h"
 
 /**
  *  TODO: ADD THEORETICAL SUPPORT FOR CELLS WITH A VALUE OF OVER 2^9223372036854775808-1
@@ -17,6 +18,13 @@ Cell::Cell(unsigned long long param_max_bits)
 {
     max_bits = param_max_bits;
     std::vector<bool>(max_bits).swap(bit_list); //Set bit_list to a vector<bool> with max_bits elements
+}
+
+Cell::Cell(Cell *other)
+{
+    max_bits = other -> max_bits;
+    //std::vector<bool>(max_bits).swap(bit_list); //Set bit_list to a vector<bool> with max_bits elements
+    bit_list = std::vector<bool>(other -> bit_list);
 }
 
 Cell::~Cell(){
@@ -64,7 +72,32 @@ std::string Cell::to_binary()
 
 std::string Cell::to_decimal()
 {
-    return std::to_string(to_u64());
+    return BigPrinter::vect_to_string(bit_list);
+    /* Old code. Stupidly slow.
+        Cell cell_copy(*this);
+        std::vector<unsigned short> digits;
+        digits.push_back(0);
+        while(cell_copy.to_bool()){
+            cell_copy.decrement();
+            digits[0]++;
+            unsigned long long i = 0LL;
+            unsigned long long l = digits.size();
+            while(digits[i]==10){
+                if(l==(i+1LL)){
+                    digits.push_back(0);
+                    l++;
+                }
+                digits[i]=0;
+                i++;
+                digits[i]++;
+            }
+        }
+        std::string out = "";
+        for(unsigned long long i=0LL, l = digits.size(); i < l; i++){
+            out = std::to_string(digits[i]) + out;
+        }
+        return out;
+    */
 }
 
 void Cell::from_char(char ch)
@@ -96,7 +129,7 @@ void Cell::from_decimal(std::string str)
 void Cell::increment()
 {
     unsigned long long i = 0;
-    while(this->bit_list[i] && i < this->max_bits){
+    while(bit_list[i] && i < max_bits){
         this->bit_list[i] = false;
         i++;
     }
@@ -108,11 +141,11 @@ void Cell::increment()
 void Cell::decrement()
 {
     unsigned long long i = 0;
-    while(!this->bit_list[i] && i < this->max_bits){
-        this->bit_list[i] = true;
+    while(!bit_list[i] && i < max_bits){
+        bit_list[i] = true;
         i++;
     }
-    if(i < this->max_bits){
-        this->bit_list[i] = false;
+    if(i < max_bits){
+        bit_list[i] = false;
     }
 }

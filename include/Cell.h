@@ -7,6 +7,7 @@ class Cell
 {
     public:
         Cell(unsigned long long bit_count); //sheet_index is the index of the cell's sheet, and is used to determine the maximum number of bits the cell can hold.
+        Cell(Cell *other); //copy constructor
         ~Cell();
         unsigned long long to_u64(); //converts to a primitive u64
         bool to_bool(); //returns value!=0
@@ -29,7 +30,7 @@ class Cell
         Cell operator--();          // --my_cell
         Cell operator--(int);       // my_cell--
         */
-    private:
+    protected:
         std::vector<bool> bit_list; //The binary representation of the cells value. The least significant bit is located at bit_list[0]
         unsigned long long int max_bits; //The maximum number of bits this cell can hold before overflowing
 };
