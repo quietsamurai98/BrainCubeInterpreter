@@ -118,11 +118,8 @@ std::string BigPrinter::vect_to_string(std::vector<bool> &in_vect){
         num.pop_back();
     }
 
-    std::deque<bool> den;
-    den.push_back(false);
-    den.push_back(true);
-    den.push_back(false);
-    den.push_back(true);
+    bool den_arr[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,1,1,0,0,1,0,0,0,1,0,0,1,0,0,0,0,0,1,1,0,0,0,1,0,0,1,1,1,0,0,0,1,1,0,1,0,1,0,0,0,1};
+    std::deque<bool> den(den_arr, den_arr+64);
 
     std::deque<bool> q;
     std::deque<bool> r;
@@ -131,9 +128,15 @@ std::string BigPrinter::vect_to_string(std::vector<bool> &in_vect){
 
     while(num.size()){
         divide_with_remainder(num, den, q, r);
-        digits  = std::to_string(tou64(r))+digits;
+        std::string digit = std::to_string(tou64(r));
+        while(digit.size()<19){
+            digit = "0"+digit;
+        }
+        digits=digit+digits;
         q.swap(num);
     }
-    digits.erase(0,1);
+    while(digits[0]=='0'){
+        digits.erase(0,1);
+    }
     return digits;
 }
